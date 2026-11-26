@@ -3,7 +3,7 @@
     <!-- Requested only when user enables call notifications from Settings. -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
-        android:label="Shadow Live"
+        android:label="MeMo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <meta-data
