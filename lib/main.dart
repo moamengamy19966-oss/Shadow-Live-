@@ -82,13 +82,15 @@ import 'features/store/widgets/store_visual_expiry_gate.dart';
 import 'features/agency/screens/public_agency_page.dart';
 import 'features/agency/services/agency_room_link.dart';
 import 'features/agency/widgets/agency_room_image_crop_sheet.dart';
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  await FirebaseAuth.instance.setLanguageCode('ar');
+  try {
+    await Firebase.initializeApp();
+  } catch (_) {}
+  try {
+    await FirebaseAuth.instance.setLanguageCode('ar');
+  } catch (_) {}
+
 
   const e2eTest = bool.fromEnvironment('E2E_TEST');
   const e2eRoomTest = bool.fromEnvironment('E2E_ROOM_TEST');
