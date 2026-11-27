@@ -1,4 +1,4 @@
-package com.shadowlive.app
+package com.memo.voiceapp
 
 import io.flutter.embedding.android.FlutterActivity
 
