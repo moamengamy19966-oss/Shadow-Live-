@@ -341,9 +341,9 @@ class _RechargeScreenState extends State<RechargeScreen> {
                         fontWeight: FontWeight.w900,
                       ),
                    const SizedBox(height: 12),
-                  SizedBox(
+                                    SizedBox(
                     height: 52,
-                    child: OutlinedButton.icon(
+                    child: OutlinedButton(
                       onPressed: () {
                         if (_packages.isEmpty) return;
                         final safeIndex = selected < _packages.length ? selected : _packages.length - 1;
@@ -352,8 +352,8 @@ class _RechargeScreenState extends State<RechargeScreen> {
                           context: context,
                           isScrollControlled: true,
                           backgroundColor: const Color(0xFF101222),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
                           ),
                           builder: (sheetCtx) => Directionality(
                             textDirection: TextDirection.rtl,
@@ -411,18 +411,24 @@ class _RechargeScreenState extends State<RechargeScreen> {
                           ),
                         );
                       },
-                      icon: const Icon(Icons.account_balance_wallet_rounded, color: Color(0xFFFFD54F)),
-                      label: const Text(
-                        'شحن عبر فودافون كاش / أورانج كاش',
-                        style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w800),
-                      ),
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: Color(0xFFFFD54F), width: 1.4),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                       ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.account_balance_wallet_rounded, color: Color(0xFFFFD54F)),
+                          SizedBox(width: 8),
+                          Text(
+                            'شحن عبر فودافون كاش / أورانج كاش',
+                            style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w800),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                   ),
+
                   ),
                 ),
               ],
