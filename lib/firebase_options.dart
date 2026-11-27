@@ -16,41 +16,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAjDi9RdObZXHF16ecWt4J4zj2_1rdDmf8',
-    appId: '1:463485983128:web:88c4953fa80d566c7a73ed',
-    messagingSenderId: '463485983128',
-    projectId: 'shadow-live',
-    authDomain: 'shadow-live.firebaseapp.com',
-    storageBucket: 'shadow-live.firebasestorage.app',
+    apiKey: 'AIzaSyCYoTaVoMQppuxi6p6yQBzwiTQHRi5eJW8',
+    appId: '1:186717648805:android:14a40c1aa6cda409b0da4c',
+    messagingSenderId: '186717648805',
+    projectId: 'memo-8d350',
+    authDomain: '://firebaseapp.com',
+    storageBucket: 'memo-8d350.firebasestorage.app',
   );
 
-  // A web Firebase App ID cannot activate native Android push delivery.
-  // Pass the actual Android app registration at build time; do not guess it.
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: String.fromEnvironment(
       'SHADOW_FIREBASE_ANDROID_API_KEY',
-      defaultValue: 'AIzaSyAjDi9RdObZXHF16ecWt4J4zj2_1rdDmf8',
+      defaultValue: 'AIzaSyCYoTaVoMQppuxi6p6yQBzwiTQHRi5eJW8',
     ),
     appId: String.fromEnvironment(
       'SHADOW_FIREBASE_ANDROID_APP_ID',
-      defaultValue: '1:463485983128:web:88c4953fa80d566c7a73ed',
+      defaultValue: '1:186717648805:android:14a40c1aa6cda409b0da4c',
     ),
-    messagingSenderId: '463485983128',
-    projectId: 'shadow-live',
-    storageBucket: 'shadow-live.firebasestorage.app',
+    messagingSenderId: '186717648805',
+    projectId: 'memo-8d350',
+    storageBucket: 'memo-8d350.firebasestorage.app',
   );
 
   static bool get androidMessagingConfigured =>
-      RegExp(r'^1:463485983128:android:[0-9a-fA-F]+$')
+      RegExp(r'^1:186717648805:android:[0-9a-fA-F]+$')
           .hasMatch(android.appId) &&
       android.apiKey.isNotEmpty;
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAjDi9RdObZXHF16ecWt4J4zj2_1rdDmf8',
-    appId: '1:463485983128:web:88c4953fa80d566c7a73ed',
-    messagingSenderId: '463485983128',
-    projectId: 'shadow-live',
-    storageBucket: 'shadow-live.firebasestorage.app',
-    iosBundleId: 'com.mycompany.shadowlive',
+    apiKey: 'AIzaSyCYoTaVoMQppuxi6p6yQBzwiTQHRi5eJW8',
+    appId: '1:186717648805:android:14a40c1aa6cda409b0da4c',
+    messagingSenderId: '186717648805',
+    projectId: 'memo-8d350',
+    storageBucket: 'memo-8d350.firebasestorage.app',
+    iosBundleId: 'com.memo.voiceapp',
   );
 }
