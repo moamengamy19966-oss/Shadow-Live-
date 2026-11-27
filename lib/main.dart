@@ -85,7 +85,21 @@ import 'features/agency/widgets/agency_room_image_crop_sheet.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
-    await Firebase.initializeApp();
+    ErrorWidget.builder = (FlutterErrorDetails details) {
+    return Material(
+      color: Colors.red.shade900,
+      child: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: SelectableText(
+            details.exceptionAsString(),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
+          ),
+        ),
+      ),
+    );
+  };
+  await Firebase.initializeApp();
   } catch (_) {}
   try {
     await FirebaseAuth.instance.setLanguageCode('ar');
