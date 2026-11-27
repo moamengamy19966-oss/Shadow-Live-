@@ -1,33 +1,14 @@
-name = "shadow-live"
+name = "memo-live"
 main = "src/index.js"
-compatibility_date = "2026-09-23"
-workers_dev = true
+compatibility_date = "2024-11-01"
 
-[observability]
-enabled = true
-
-# Workers AI binding only. No inference or billing occurs until the owner
-# enables moderation AFTER the pre-publication gate is verified.
 [ai]
 binding = "AI"
-
-[[analytics_engine_datasets]]
-binding = "PRESSURE_ANALYTICS"
-dataset = "shadow_live_pressure_v1"
-
-[triggers]
-# During development, settlement is also triggered by active game clients.
-# A 5-minute safety sweep avoids a permanent Firestore read loop under quota pressure.
-crons = ["*/5 * * * *"]
 
 [[durable_objects.bindings]]
 name = "ROOM_REALTIME"
 class_name = "RoomRealtimeObject"
 
 [[migrations]]
-tag = "room-realtime-v1"
+tag = "v1"
 new_sqlite_classes = ["RoomRealtimeObject"]
-
-[[r2_buckets]]
-binding = "USER_STORAGE"
-bucket_name = "shadow-live-storage"
