@@ -339,104 +339,14 @@ class _RechargeScreenState extends State<RechargeScreen> {
                       style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w900,
-                      ),
-                   const SizedBox(height: 12),
-                                    SizedBox(
-                    height: 52,
-                    child: OutlinedButton(
-                      onPressed: () {
-                        if (_packages.isEmpty) return;
-                        final safeIndex = selected < _packages.length ? selected : _packages.length - 1;
-                        final pkg = _packages[safeIndex];
-                        showModalBottomSheet<void>(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: const Color(0xFF101222),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-                          ),
-                          builder: (sheetCtx) => Directionality(
-                            textDirection: TextDirection.rtl,
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 22, 20, 28),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  const Text(
-                                    'الشحن عبر المحافظ الإلكترونية 💳',
-                                    style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.w900),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    'الباقة المختارة: ${pkg.totalCoins} عملة (\$${pkg.priceUsd.toStringAsFixed(2)})',
-                                    style: const TextStyle(color: Color(0xFFFFD54F), fontWeight: FontWeight.w800),
-                                  ),
-                                  const SizedBox(height: 16),
-                                  ListTile(
-                                    tileColor: const Color(0xFF1A1D35),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                                    title: const Text('فودافون كاش (Vodafone Cash)', style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.w800)),
-                                    subtitle: const SelectableText('01098201934', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w900)),
-                                    trailing: IconButton(
-                                      icon: const Icon(Icons.copy_rounded, color: Colors.white),
-                                      onPressed: () {
-                                        Clipboard.setData(const ClipboardData(text: '01098201934'));
-                                        _msg('تم نسخ رقم فودافون كاش');
-                                      },
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  ListTile(
-                                    tileColor: const Color(0xFF1A1D35),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                                    title: const Text('أورانج كاش (Orange Cash)', style: TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.w800)),
-                                    subtitle: const SelectableText('01226000799', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w900)),
-                                    trailing: IconButton(
-                                      icon: const Icon(Icons.copy_rounded, color: Colors.white),
-                                      onPressed: () {
-                                        Clipboard.setData(const ClipboardData(text: '01226000799'));
-                                        _msg('تم نسخ رقم أورانج كاش');
-                                      },
-                                    ),
-                                  ),
-                                  const SizedBox(height: 14),
-                                  const Text(
-                                    'بعد التحويل، أرسل صورة الإيصال مع رقم الـ ID الخاص بك للدعم لإضافة العملات فوراً.',
-                                    style: TextStyle(color: Colors.white70, fontSize: 13),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                      style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Color(0xFFFFD54F), width: 1.4),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.account_balance_wallet_rounded, color: Color(0xFFFFD54F)),
-                          SizedBox(width: 8),
-                          Text(
-                            'شحن عبر فودافون كاش / أورانج كاش',
-                            style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w800),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  ),
-                ),
+                      ),                ],
               ],
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
+  }
   }
 
   Widget _walletBalance() {
