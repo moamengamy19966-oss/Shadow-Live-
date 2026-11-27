@@ -17,17 +17,13 @@ tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
 subprojects {
-    def applyCompileSdk = { proj ->
-        if (proj.hasProperty('android')) {
-            proj.android {
-                compileSdkVersion 35
+    if (project.name != 'app') {
+        project.afterEvaluate { proj ->
+            if (proj.hasProperty('android')) {
+                proj.android {
+                    compileSdkVersion 35
+                }
             }
         }
     }
-    if (project.state.executed) {
-        applyCompileSdk(project)
-    } else {
-        project.afterEvaluate { applyCompileSdk(project) }
-    }
 }
-
