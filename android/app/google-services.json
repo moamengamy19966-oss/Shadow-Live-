@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "186717648805",
+    "project_id": "memo-8d350",
+    "storage_bucket": "memo-8d350.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186717648805:android:14a40c1aa6cda409b0da4c",
+        "android_client_info": {
+          "package_name": "com.memo.voiceapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYaTaVwhQppuxIGpGyQ8zWi1QHRl5eJN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
