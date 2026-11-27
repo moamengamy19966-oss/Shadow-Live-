@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../../utils/compact_number.dart';
 import '../../profile/widgets/profile_avatar_with_frame.dart';
@@ -339,14 +338,16 @@ class _RechargeScreenState extends State<RechargeScreen> {
                       style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w900,
-                      ),                ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
-            ),
+            ],
           ),
-        );
-      },
+        ),
+      ),
     );
-  }
   }
 
   Widget _walletBalance() {
