@@ -1249,6 +1249,5 @@ export async function vipActions(request, env) {
     ) {
       return json(request, env, { ok: false, code }, 503);
     }
-    return json(request, env, { ok: false, code: "server_vip_failed" }, 500);
-  }
+  return json(request, env, { ok: false, code: "server_vip_failed: " + (error?.message || error) }, 500);
 }
